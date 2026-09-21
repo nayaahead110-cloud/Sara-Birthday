@@ -1,543 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-  --orange: #ff7a18;
-  --orange-light: #ffb15c;
-
-  --purple: #9b6cff;
-  --purple-light: #c8aaff;
-
-  --pink: #ff9bcf;
-
-  --white: #ffffff;
-  --text: #f8f3ff;
-  --muted: #b8aec7;
-
-  --background: #09070e;
-}
-
-
-/* =========================
-   الصفحة
-========================= */
-
-html {
-  scroll-behavior: smooth;
+  --bg: #08080c;
+  --purple: #a78bfa;
+  --purple-dark: #6d4fd3;
+  --white: #f5f3ff;
+  --gray: #aaa6b8;
 }
 
 body {
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(115, 74, 180, 0.18), transparent 35%),
+    var(--bg);
+
+  color: var(--white);
+
+  font-family: "Cairo", sans-serif;
 
   overflow-x: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(122, 65, 190, 0.22),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 15% 80%,
-      rgba(255, 122, 24, 0.12),
-      transparent 30%
-    ),
-    var(--background);
-
-  color: var(--text);
-
-  font-family:
-    Arial,
-    "Tahoma",
-    sans-serif;
 }
 
+/* النجوم */
 
-/* =========================
-   الخلفية
-========================= */
-
-.background {
+.stars,
+.stars::before,
+.stars::after {
   position: fixed;
-
   inset: 0;
-
-  z-index: 0;
-
   pointer-events: none;
-
-  overflow: hidden;
 }
 
 .stars {
-  position: absolute;
-
-  inset: 0;
-
-  opacity: 0.5;
-
+  z-index: 0;
   background-image:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,0.8) 1px,
-      transparent 1px
-    ),
-    radial-gradient(
-      circle,
-      rgba(255,160,220,0.6) 1px,
-      transparent 1px
-    );
+    radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size: 110px 110px;
+  opacity: .35;
+}
 
-  background-size:
-    90px 90px,
-    150px 150px;
-
-  background-position:
-    10px 20px,
-    40px 70px;
-
+.stars::before {
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(167,139,250,.7) 1px, transparent 1px);
+  background-size: 170px 170px;
   animation: starsMove 20s linear infinite;
 }
 
+.stars::after {
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1px);
+  background-size: 230px 230px;
+  animation: starsMove 30s linear infinite reverse;
+}
 
 @keyframes starsMove {
-
   from {
-    background-position:
-      10px 20px,
-      40px 70px;
+    transform: translateY(0);
   }
 
   to {
-    background-position:
-      100px 120px,
-      170px 160px;
+    transform: translateY(170px);
   }
-
 }
 
+/* الصفحات */
 
-/* الإضاءات */
-
-.glow {
-  position: absolute;
-
-  border-radius: 50%;
-
-  filter: blur(80px);
-
-  opacity: 0.25;
-}
-
-.glow-one {
-  width: 350px;
-  height: 350px;
-
-  background: var(--purple);
-
-  top: 10%;
-  left: 15%;
-}
-
-.glow-two {
-  width: 300px;
-  height: 300px;
-
-  background: var(--orange);
-
-  bottom: 10%;
-  right: 10%;
-}
-
-
-/* =========================
-   المحتوى
-========================= */
-
-main {
+.hero,
+.surprise {
   position: relative;
-
-  z-index: 5;
+  z-index: 2;
 
   min-height: 100vh;
 
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
-
   align-items: center;
-
-  padding: 30px 20px;
-}
-
-
-/* =========================
-   الصفحة الرئيسية
-========================= */
-
-.hero {
-  width: 100%;
-
-  max-width: 900px;
 
   text-align: center;
 
-  animation: heroAppear 1.2s ease;
+  padding: 30px;
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
 }
 
-
-@keyframes heroAppear {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(30px)
-      scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-
-}
-
-
-/* النص الصغير */
+/* العنوان */
 
 .small-title {
-  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
 
-  color: var(--purple-light);
-
-  font-size: 16px;
-
+  font-size: 13px;
   letter-spacing: 5px;
 
-  text-transform: uppercase;
+  color: var(--purple);
+
+  margin-bottom: 20px;
+
+  opacity: .8;
 }
 
+h1 {
+  font-family: "Playfair Display", serif;
 
-/* اسم سارا */
+  font-size: clamp(65px, 16vw, 150px);
 
-.hero h1 {
-  font-size: clamp(
-    80px,
-    18vw,
-    180px
-  );
-
-  line-height: 0.9;
-
-  font-weight: 800;
+  line-height: 1;
 
   margin-bottom: 30px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 10%,
-      var(--pink) 45%,
-      var(--purple) 75%,
-      var(--orange-light)
-    );
+  background: linear-gradient(
+    120deg,
+    #fff,
+    #d8c9ff,
+    #9878ed
+  );
 
   -webkit-background-clip: text;
   background-clip: text;
 
   color: transparent;
 
-  filter:
-    drop-shadow(
-      0 15px 35px
-      rgba(155,108,255,0.25)
-    );
+  animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
+@keyframes titleGlow {
 
-/* Happy Birthday */
+  from {
+    filter: drop-shadow(0 0 5px rgba(167,139,250,.15));
+  }
 
-.birthday-text {
-  display: inline-block;
+  to {
+    filter: drop-shadow(0 0 25px rgba(167,139,250,.45));
+  }
 
-  padding: 9px 22px;
-
-  border-radius: 999px;
-
-  border:
-    1px solid
-    rgba(255,255,255,0.1);
-
-  background:
-    rgba(255,255,255,0.04);
-
-  color: var(--orange-light);
-
-  font-size: 14px;
-
-  letter-spacing: 4px;
-
-  margin-bottom: 25px;
 }
-
 
 .intro {
-  color: var(--muted);
+  color: var(--gray);
 
-  font-size: 19px;
+  font-size: 17px;
 
-  line-height: 2;
+  margin-bottom: 40px;
 
-  margin-bottom: 35px;
+  opacity: 0;
+
+  animation: fadeUp 1s ease .5s forwards;
 }
 
-
-/* =========================
-   الزر
-========================= */
+/* الزر */
 
 .main-button {
-  border: none;
-
-  padding: 15px 30px;
-
-  border-radius: 999px;
-
-  cursor: pointer;
-
-  color: white;
-
-  font-size: 16px;
+  border: 1px solid rgba(167,139,250,.5);
 
   background:
     linear-gradient(
       135deg,
-      var(--purple),
-      #7444c5
+      rgba(167,139,250,.18),
+      rgba(109,79,211,.08)
     );
 
+  color: white;
+
+  padding: 14px 28px;
+
+  border-radius: 50px;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
   box-shadow:
-    0 10px 35px
-    rgba(155,108,255,0.3);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    0 0 0 rgba(167,139,250,0);
 }
-
 
 .main-button span {
-  margin-right: 5px;
+  margin-right: 8px;
 }
-
 
 .main-button:hover {
   transform: translateY(-4px);
 
+  border-color: var(--purple);
+
   box-shadow:
-    0 15px 45px
-    rgba(155,108,255,0.45);
-}
+    0 10px 35px rgba(125,90,210,.25);
 
-
-.main-button:active {
-  transform: scale(0.95);
-}
-
-
-/* =========================
-   الشخصيات
-========================= */
-
-.character {
-  position: fixed;
-
-  z-index: 10;
-
-  width: 145px;
-
-  pointer-events: none;
-
-  user-select: none;
-}
-
-
-.character img {
-  display: block;
-
-  width: 100%;
-
-  height: auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 12px 15px
-      rgba(0,0,0,0.4)
+  background:
+    linear-gradient(
+      135deg,
+      rgba(167,139,250,.3),
+      rgba(109,79,211,.15)
     );
 }
 
-
-/* ناروتو */
-
-.character-naruto {
-
-  left: 4%;
-
-  top: 15%;
-
-  animation:
-    narutoFloat
-    5s
-    ease-in-out
-    infinite;
+.main-button:active {
+  transform: scale(.96);
 }
 
-
-@keyframes narutoFloat {
-
-  0% {
-    transform:
-      translateY(0)
-      rotate(-4deg);
-  }
-
-  50% {
-    transform:
-      translateY(-28px)
-      rotate(4deg);
-  }
-
-  100% {
-    transform:
-      translateY(0)
-      rotate(-4deg);
-  }
-
-}
-
-
-/* هيناتا */
-
-.character-hinata {
-
-  right: 4%;
-
-  bottom: 8%;
-
-  animation:
-    hinataFloat
-    4.5s
-    ease-in-out
-    infinite;
-}
-
-
-@keyframes hinataFloat {
-
-  0% {
-    transform:
-      translateY(0)
-      rotate(3deg);
-  }
-
-  50% {
-    transform:
-      translateY(-30px)
-      rotate(-3deg);
-  }
-
-  100% {
-    transform:
-      translateY(0)
-      rotate(3deg);
-  }
-
-}
-
-
-/* =========================
-   المفاجأة
-========================= */
+/* المفاجأة */
 
 .surprise {
-  width: 100%;
+  position: fixed;
 
-  max-width: 700px;
-
-  text-align: center;
-
-  animation:
-    surpriseAppear
-    0.8s
-    ease;
-}
-
-
-@keyframes surpriseAppear {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(35px)
-      scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-
-}
-
-
-.message-card {
-
-  padding: 55px 35px;
-
-  border-radius: 35px;
-
-  border:
-    1px solid
-    rgba(255,255,255,0.1);
+  inset: 0;
 
   background:
-    rgba(255,255,255,0.05);
+    radial-gradient(
+      circle at center,
+      rgba(111,75,180,.2),
+      transparent 50%
+    ),
+    #08080c;
 
-  backdrop-filter: blur(18px);
+  opacity: 0;
 
-  box-shadow:
-    0 30px 100px
-    rgba(0,0,0,0.4);
+  transform: scale(.96);
+
+  pointer-events: none;
 }
 
+.surprise.active {
+  opacity: 1;
 
-.cake {
+  transform: scale(1);
+
+  pointer-events: auto;
+}
+
+.surprise.hidden {
+  display: none;
+}
+
+.gift-icon {
   font-size: 65px;
 
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 
-  animation:
-    cakeBounce
-    1.5s
-    ease-in-out
-    infinite;
+  animation: floatGift 2.5s ease-in-out infinite;
 }
 
-
-@keyframes cakeBounce {
+@keyframes floatGift {
 
   0%,
   100% {
@@ -545,160 +261,58 @@ main {
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
   }
 
 }
 
+.surprise h2 {
+  font-size: clamp(28px, 7vw, 48px);
 
-.message-card h2 {
-  font-size: 32px;
-
-  margin-bottom: 25px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--pink),
-      var(--purple-light)
-    );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  color: transparent;
+  margin-bottom: 15px;
 }
 
+.surprise p {
+  color: var(--gray);
 
-.message-card p {
-  color: var(--muted);
-
-  font-size: 17px;
+  max-width: 500px;
 
   line-height: 2;
 
-  margin-bottom: 18px;
+  margin-bottom: 30px;
 }
 
+/* ظهور */
 
-/* =========================
-   الإخفاء
-========================= */
+@keyframes fadeUp {
 
-.hidden {
-  display: none;
-}
-
-
-/* =========================
-   الكونفيتي
-========================= */
-
-.confetti-piece {
-
-  position: fixed;
-
-  top: -20px;
-
-  width: 9px;
-
-  height: 16px;
-
-  z-index: 100;
-
-  pointer-events: none;
-
-  animation:
-    confettiFall
-    3.5s
-    linear
-    forwards;
-}
-
-
-@keyframes confettiFall {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
   to {
-
-    transform:
-      translateY(110vh)
-      rotate(720deg);
-
-    opacity: 0;
-
+    opacity: 1;
+    transform: translateY(0);
   }
 
 }
 
+/* موبايل */
 
-/* =========================
-   الجوال
-========================= */
-
-@media (max-width: 700px) {
-
-  main {
-    padding:
-      30px 15px;
-  }
-
+@media (max-width: 600px) {
 
   .small-title {
-    font-size: 12px;
-
-    letter-spacing: 3px;
-  }
-
-
-  .hero h1 {
-    font-size: 90px;
-  }
-
-
-  .birthday-text {
     font-size: 11px;
-
     letter-spacing: 3px;
   }
-
 
   .intro {
-    font-size: 16px;
-  }
-
-
-  .character {
-    width: 85px;
-  }
-
-
-  .character-naruto {
-    left: 1%;
-
-    top: 9%;
-  }
-
-
-  .character-hinata {
-    right: 1%;
-
-    bottom: 4%;
-  }
-
-
-  .message-card {
-    padding:
-      40px 22px;
-  }
-
-
-  .message-card h2 {
-    font-size: 25px;
-  }
-
-
-  .message-card p {
     font-size: 15px;
+  }
+
+  .main-button {
+    padding: 13px 24px;
   }
 
 }
