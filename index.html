@@ -5,120 +5,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday Sara ♡</title>
+  <title>إلى سارا ♡</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- خلفية النجوم -->
-  <div class="background">
-    <div class="stars"></div>
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
-  </div>
+  <div class="stars"></div>
 
+  <main class="hero">
 
-  <!-- الشخصيات الطافية -->
+    <div class="small-title">A LITTLE SURPRISE FOR</div>
 
-  <div class="character character-naruto">
-    <img
-      src="assets/images/naruto-chibi.png"
-      alt="Naruto Chibi"
-    >
-  </div>
+    <h1>سارا</h1>
 
-  <div class="character character-hinata">
-    <img
-      src="assets/images/hinata-chibi.png"
-      alt="Hinata Chibi"
-    >
-  </div>
+    <p class="intro">
+      فيه شيء صغير صنع لك من القلب...
+    </p>
 
-
-  <!-- المحتوى الرئيسي -->
-
-  <main>
-
-    <section class="hero">
-
-      <div class="small-title">
-        A little surprise for
-      </div>
-
-      <h1>Sara</h1>
-
-      <div class="birthday-text">
-        HAPPY BIRTHDAY
-      </div>
-
-      <p class="intro">
-        اليوم مو يوم عادي...
-        <br>
-        اليوم يوم سارا ♡
-      </p>
-
-      <button
-        class="main-button"
-        id="openButton"
-      >
-        افتحي المفاجأة
-        <span>♡</span>
-      </button>
-
-    </section>
-
-
-    <!-- الرسالة -->
-
-    <section
-      class="surprise hidden"
-      id="surprise"
-    >
-
-      <div class="message-card">
-
-        <div class="cake">
-          🎂
-        </div>
-
-        <h2>
-          كل عام وأنتِ بخير يا سارا ♡
-        </h2>
-
-        <p>
-          أتمنى تكون هالسنة مختلفة عن كل سنة قبلها،
-          ومليانة أشياء حلوة وضحكات وذكريات
-          ما تنسينها.
-        </p>
-
-        <p>
-          وهذا الموقع كله معمول مخصوص لك،
-          لأنك تستاهلين شيء خاص في يومك.
-        </p>
-
-        <button
-          class="main-button"
-          id="celebrateButton"
-        >
-          احتفلي معي 🎉
-        </button>
-
-      </div>
-
-    </section>
+    <button id="openButton" class="main-button">
+      افتحي هديتك
+      <span>♡</span>
+    </button>
 
   </main>
 
+  <section id="surprise" class="surprise hidden">
 
-  <!-- عناصر الاحتفال -->
+    <div class="gift-icon">🎁</div>
 
-  <div id="confetti"></div>
+    <h2>عندي لك كم شيء...</h2>
 
+    <p>
+      بس لازم تكمّلين للنهاية عشان توصّلين لآخر مفاجأة.
+    </p>
+
+    <button id="nextButton" class="main-button">
+      كمّلي
+      <span>→</span>
+    </button>
+
+  </section>
 
   <script src="script.js"></script>
 
 </body>
-
 </html>
