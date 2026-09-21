@@ -1,54 +1,172 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>  <meta charset="UTF-8"><meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+«»
 
-  <title>sara إلى  ♡</title>
+  <title>Sara ♡</title>  <link rel="stylesheet" href="style.css"></head><body>  <div class="stars"></div>  <!-- =========================
+       الصفحة الرئيسية
+  ========================= -->  <main class="hero" id="hero"><div class="small-title">
+  A LITTLE SURPRISE FOR
+</div>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+<h1>
+  Sara
+</h1>
 
-<body>
+<p class="intro">
+  فيه شيء صغير صنع لك من القلب...
+</p>
 
-  <div class="stars"></div>
+<button
+  id="openButton"
+  class="main-button"
+>
+  افتحي هديتك
+  <span>♡</span>
+</button>
 
-  <main class="hero">
+  </main>  <!-- =========================
+       المفاجأة الأولى
+  ========================= -->  <section
+    id="surprise"
+    class="surprise hidden"
+  ><div class="gift-icon">
+  🎁
+</div>
 
-    <div class="small-title">A LITTLE SURPRISE FOR</div>
+<h2>
+  عندي لك كم شيء...
+</h2>
 
-    <h1>سارا</h1>
+<p>
+  بس لازم تكمّلين للنهاية
+  عشان توصّلين لآخر مفاجأة.
+</p>
 
-    <p class="intro">
-      فيه شيء صغير صنع لك من القلب...
-    </p>
+<button
+  id="nextButton"
+  class="main-button"
+>
+  كمّلي
+  <span>→</span>
+</button>
 
-    <button id="openButton" class="main-button">
-      افتحي هديتك
-      <span>♡</span>
-    </button>
+  </section>  <!-- =========================
+       المرحلة قبل الرسالة الأخيرة
+  ========================= -->  <section
+    id="beforeMessage"
+    class="surprise hidden"
+  ><div class="gift-icon">
+  ♡
+</div>
 
-  </main>
+<h2>
+  باقي شيء واحد...
+</h2>
 
-  <section id="surprise" class="surprise hidden">
+<p>
+  وصلتي لآخر خطوة تقريبًا.
+  <br><br>
+  قبل ما تنتهي الهدية،
+  فيه كلمة أخيرة أبيك تقرينها بنفسك.
+</p>
 
-    <div class="gift-icon">🎁</div>
+<button
+  id="messageButton"
+  class="main-button"
+>
+  كمّلي المفاجأة
+  <span>♡</span>
+</button>
 
-    <h2>عندي لك كم شيء...</h2>
+  </section>  <script>
 
-    <p>
-      بس لازم تكمّلين للنهاية عشان توصّلين لآخر مفاجأة.
-    </p>
+    const openButton =
+      document.getElementById("openButton");
 
-    <button id="nextButton" class="main-button">
-      كمّلي
-      <span>→</span>
-    </button>
+    const nextButton =
+      document.getElementById("nextButton");
 
-  </section>
+    const messageButton =
+      document.getElementById("messageButton");
 
-  <script src="script.js"></script>
+    const hero =
+      document.getElementById("hero");
 
-</body>
-</html>
+    const surprise =
+      document.getElementById("surprise");
+
+    const beforeMessage =
+      document.getElementById("beforeMessage");
+
+
+    /* =========================
+       فتح الهدية
+    ========================= */
+
+    openButton.addEventListener("click", () => {
+
+      hero.style.opacity = "0";
+      hero.style.transform = "scale(.96)";
+
+      setTimeout(() => {
+
+        hero.style.display = "none";
+
+        surprise.classList.remove("hidden");
+
+        requestAnimationFrame(() => {
+          surprise.classList.add("active");
+        });
+
+      }, 600);
+
+    });
+
+
+    /* =========================
+       الانتقال للمرحلة الجديدة
+    ========================= */
+
+    nextButton.addEventListener("click", () => {
+
+      surprise.style.opacity = "0";
+      surprise.style.transform = "translateY(-15px)";
+
+      setTimeout(() => {
+
+        surprise.style.display = "none";
+
+        beforeMessage.classList.remove("hidden");
+
+        requestAnimationFrame(() => {
+          beforeMessage.classList.add("active");
+        });
+
+      }, 500);
+
+    });
+
+
+    /* =========================
+       الرسالة الأخيرة
+    ========================= */
+
+    messageButton.addEventListener("click", () => {
+
+      document.body.style.transition =
+        "opacity .7s ease";
+
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+
+        window.location.href =
+          "message.html";
+
+      }, 700);
+
+    });
+
+  </script></body></html>
