@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+  <meta charset="UTF-8"><meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+«»
+
+  <title>باقي شيء واحد ♡</title>  <link rel="stylesheet" href="style.css">  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .final-stage {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 20px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .final-card {
+
+      width: min(620px, 100%);
+
+      padding: 55px 30px;
+
+      text-align: center;
+
+      border: 1px solid rgba(167,139,250,.18);
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(167,139,250,.025)
+        );
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.45);
+
+      animation: appear 1.2s ease forwards;
+    }
+
+    .small-heart {
+
+      font-size: 40px;
+
+      color: #c4adff;
+
+      margin-bottom: 25px;
+
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .final-card h1 {
+
+      font-size: clamp(32px, 8vw, 55px);
+
+      margin-bottom: 25px;
+
+    }
+
+    .final-card p {
+
+      color: #d4d0df;
+
+      font-size: 16px;
+
+      line-height: 2.2;
+
+      margin-bottom: 35px;
+
+    }
+
+    .continue-button {
+
+      border: 1px solid rgba(196,173,255,.35);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(196,173,255,.12),
+          rgba(120,90,190,.08)
+        );
+
+      color: #e8e0ff;
+
+      padding: 14px 34px;
+
+      border-radius: 50px;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+    }
+
+    .continue-button:hover {
+
+      transform: translateY(-3px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(196,173,255,.2),
+          rgba(120,90,190,.14)
+        );
+
+      box-shadow:
+        0 10px 35px rgba(120,90,190,.2);
+
+    }
+
+    @keyframes appear {
+
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .final-card {
+        padding: 45px 22px;
+      }
+
+      .final-card p {
+        font-size: 15px;
+      }
+
+    }
+
+  </style></head><body>  <div class="stars"></div>  <main class="final-stage"><section class="final-card">
+
+  <div class="small-heart">
+    ♡
+  </div>
+
+  <h1>
+    باقي شيء واحد...
+  </h1>
+
+  <p>
+
+    وصلتي لآخر خطوة تقريبًا.
+
+    <br>
+
+    بس قبل ما تنتهي الهدية،
+
+    <br>
+
+    فيه كلمة أخيرة أبيك تقرينها بنفسك.
+
+  </p>
+
+  <button
+    class="continue-button"
+    id="continueButton"
+  >
+    كمّلي المفاجأة ♡
+  </button>
+
+</section>
+
+  </main>  <script>
+
+    const continueButton =
+      document.getElementById("continueButton");
+
+
+    continueButton.addEventListener("click", () => {
+
+      document.body.style.transition =
+        "opacity .7s ease";
+
+      document.body.style.opacity = "0";
+
+
+      setTimeout(() => {
+
+        window.location.href =
+          "message.html";
+
+      }, 700);
+
+    });
+
+  </script></body></html>
