@@ -5,126 +5,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>For Sara ♡</title>
+  <title>Happy Birthday Sara ♡</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="stars"></div>
+  <!-- خلفية النجوم -->
+  <div class="background">
+    <div class="stars"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+  </div>
 
-  <main class="container">
 
-    <!-- شاشة البداية -->
-    <section class="hero" id="hero">
+  <!-- الشخصيات الطافية -->
 
-      <div class="small-text">
+  <div class="character character-naruto">
+    <img
+      src="assets/images/naruto-chibi.png"
+      alt="Naruto Chibi"
+    >
+  </div>
+
+  <div class="character character-hinata">
+    <img
+      src="assets/images/hinata-chibi.png"
+      alt="Hinata Chibi"
+    >
+  </div>
+
+
+  <!-- المحتوى الرئيسي -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="small-title">
         A little surprise for
       </div>
 
       <h1>Sara</h1>
 
-      <p>
+      <div class="birthday-text">
+        HAPPY BIRTHDAY
+      </div>
+
+      <p class="intro">
         اليوم مو يوم عادي...
         <br>
-        اليوم يوم شخص مميز جدًا.
+        اليوم يوم سارا ♡
       </p>
 
-      <button id="startBtn">
-        افتحي المفاجأة ♡
+      <button
+        class="main-button"
+        id="openButton"
+      >
+        افتحي المفاجأة
+        <span>♡</span>
       </button>
 
     </section>
 
 
-    <!-- رسالة البداية -->
-    <section class="message hidden" id="message">
+    <!-- الرسالة -->
 
-      <div class="card">
+    <section
+      class="surprise hidden"
+      id="surprise"
+    >
 
-        <span class="icon">🎂</span>
+      <div class="message-card">
 
-        <h2>عيد ميلاد سعيد يا سارا</h2>
-
-        <p>
-          اليوم حبيت أسوي لك شيء مختلف،
-          شيء بسيط لكنه معمول مخصوص لك.
-        </p>
-
-        <p>
-          لأن وجودك بحياتي يستاهل احتفال
-          مو بس بيوم واحد.
-        </p>
-
-        <button id="memoriesBtn">
-          كملي ♡
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- الذكريات -->
-    <section class="memories hidden" id="memories">
-
-      <h2>أشياء تذكرني فيك</h2>
-
-      <div class="memory-grid">
-
-        <div class="memory-card">
-          <span>☕</span>
-          <h3>ضحكتك</h3>
-          <p>في أشياء صغيرة مستحيل أنساها.</p>
+        <div class="cake">
+          🎂
         </div>
 
-        <div class="memory-card">
-          <span>🌙</span>
-          <h3>سوالفنا</h3>
-          <p>حتى أبسط الكلام معك له ذكرى.</p>
-        </div>
-
-        <div class="memory-card">
-          <span>✨</span>
-          <h3>وجودك</h3>
-          <p>من الأشياء اللي تخلي الأيام ألطف.</p>
-        </div>
-
-      </div>
-
-      <button id="letterBtn">
-        عندي شيء أخير لك 💌
-      </button>
-
-    </section>
-
-
-    <!-- الرسالة الأخيرة -->
-    <section class="letter hidden" id="letter">
-
-      <div class="letter-card">
-
-        <div class="envelope">💌</div>
-
-        <h2>إلى سارا</h2>
-
-        <p>
-          أتمنى سنتك الجديدة تكون مليانة
-          أشياء حلوة وضحكات وذكريات تستاهلينها.
-        </p>
-
-        <p>
-          وأتمنى مهما تغيرت الأيام،
-          تظل عندك أسباب كثيرة تخليك تبتسمين.
-        </p>
-
-        <p class="final-line">
+        <h2>
           كل عام وأنتِ بخير يا سارا ♡
+        </h2>
+
+        <p>
+          أتمنى تكون هالسنة مختلفة عن كل سنة قبلها،
+          ومليانة أشياء حلوة وضحكات وذكريات
+          ما تنسينها.
         </p>
 
-        <button id="celebrateBtn">
-          🎉 اضغطي هنا
+        <p>
+          وهذا الموقع كله معمول مخصوص لك،
+          لأنك تستاهلين شيء خاص في يومك.
+        </p>
+
+        <button
+          class="main-button"
+          id="celebrateButton"
+        >
+          احتفلي معي 🎉
         </button>
 
       </div>
@@ -133,7 +111,11 @@
 
   </main>
 
+
+  <!-- عناصر الاحتفال -->
+
   <div id="confetti"></div>
+
 
   <script src="script.js"></script>
 
