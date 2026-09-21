@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>آخر شيء لسارا ♡</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    .message-page {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 20px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .message-card {
+
+      width: min(700px, 100%);
+
+      padding: 45px 35px;
+
+      text-align: center;
+
+      border: 1px solid rgba(167,139,250,.18);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(167,139,250,.025)
+        );
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.45);
+
+      animation: messageAppear 1.2s ease forwards;
+
+    }
+
+    .heart {
+      font-size: 35px;
+
+      margin-bottom: 20px;
+
+      color: #c4adff;
+
+      animation: heartFloat 2s ease-in-out infinite;
+    }
+
+    .message-card h1 {
+
+      font-size: clamp(38px, 9vw, 65px);
+
+      margin-bottom: 30px;
+
+    }
+
+    .message {
+
+      color: #d4d0df;
+
+      font-size: 16px;
+
+      line-height: 2.2;
+
+    }
+
+    .message p {
+      margin-bottom: 18px;
+    }
+
+    .ending {
+
+      margin-top: 35px;
+
+      color: #c2adf5;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 19px;
+
+      line-height: 2;
+
+    }
+
+    .date {
+
+      margin-top: 30px;
+
+      color: #777282;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+    }
+
+    @keyframes messageAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+    }
+
+    @keyframes heartFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .message-card {
+        padding: 35px 22px;
+      }
+
+      .message {
+        font-size: 15px;
+        line-height: 2;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <main class="message-page">
+
+    <article class="message-card">
+
+      <div class="heart">♡</div>
+
+      <h1>سارا</h1>
+
+      <div class="message">
+
+        <p>
+          وصلتي للنهاية… 🤍
+        </p>
+
+        <p>
+          يمكن من البداية كان واضح إن هذي مو مجرد صفحة،
+          ولا مجرد هدية عادية.
+        </p>
+
+        <p>
+          كنت أبي أسوي لك شيء يبقى،
+          شيء كل ما فتحتيه بعد فترة يرجع لك نفس الشعور
+          اللي كان يوم صنعته لك.
+        </p>
+
+        <p>
+          كل تفصيلة هنا كانت لك،
+          من أول خطوة لآخر كلمة.
+        </p>
+
+        <p>
+          وأهم شيء أبيك تعرفينه إن وجودك بحد ذاته
+          شيء يستحق الاحتفال، مو بس اليوم… كل يوم.
+        </p>
+
+        <p>
+          فـ عيد ميلاد سعيد يا سارا.
+          أتمنى سنتك الجديدة تكون أخف على قلبك،
+          وأجمل مما تتوقعين،
+          ومليانة أشياء تخليك تبتسمين من قلب.
+        </p>
+
+      </div>
+
+      <div class="ending">
+
+        وهذي كانت هديتي لك…
+        <br>
+
+        بس أتمنى إن الذكرى اللي بتبقى منها
+        تكون أكبر من الهدية نفسها.
+
+      </div>
+
+      <div class="date">
+        HAPPY BIRTHDAY, SARA ♡
+      </div>
+
+    </article>
+
+  </main>
+
+</body>
+
+</html>
